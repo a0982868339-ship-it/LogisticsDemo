@@ -19,9 +19,8 @@
 
 ## 📺 演示视频 (Demo)
 
-> **[点击查看 演示录屏]**
->
->![Uploading 工业级具身智能（Embodied AI）决策系统demo演示.gif…]()
+![工业级具身智能（Embodied AI）决策系统demo演示](https://github.com/user-attachments/assets/01a6551f-f87c-46e9-877c-6e329cd9d979)
+
 
 
 ---
