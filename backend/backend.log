@@ -1,0 +1,41 @@
+INFO:     Will watch for changes in these directories: ['/Users/yangtianjun/Desktop/LogisticsDemo/backend']
+INFO:     Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)
+INFO:     Started reloader process [7302] using WatchFiles
+INFO:     Started server process [7357]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     127.0.0.1:51311 - "POST /telemetry/trigger HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51325 - "POST /telemetry/trigger HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51328 - "POST /inference HTTP/1.1" 200 OK
+huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
+To disable this warning, you can either:
+	- Avoid using `tokenizers` before the fork if possible
+	- Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
+huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
+To disable this warning, you can either:
+	- Avoid using `tokenizers` before the fork if possible
+	- Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
+INFO:     127.0.0.1:51341 - "POST /telemetry/trigger HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51344 - "POST /inference HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51404 - "POST /telemetry/trigger HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51406 - "POST /inference HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51419 - "POST /telemetry/trigger HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51422 - "POST /inference HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51465 - "POST /telemetry/trigger HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51468 - "POST /inference HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51556 - "POST /telemetry/trigger HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51559 - "POST /inference HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51566 - "POST /telemetry/trigger HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51569 - "POST /inference HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51579 - "POST /telemetry/trigger HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51582 - "POST /inference HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52178 - "POST /telemetry/trigger HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52181 - "POST /inference HTTP/1.1" 200 OK
+WARNING:  WatchFiles detected changes in 'app/core/agent_graph.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [7357]
+INFO:     Started server process [8785]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.

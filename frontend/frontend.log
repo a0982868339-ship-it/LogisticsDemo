@@ -1,0 +1,59 @@
+
+> frontend@0.1.0 dev
+> next dev
+
+⚠ Warning: Next.js inferred your workspace root, but it may not be correct.
+ We detected multiple lockfiles and selected the directory of /Users/yangtianjun/package-lock.json as the root directory.
+ To silence this warning, set `turbopack.root` in your Next.js config, or consider removing one of the lockfiles if it's not needed.
+   See https://nextjs.org/docs/app/api-reference/config/next-config-js/turbopack#root-directory for more information.
+ Detected additional lockfiles: 
+   * /Users/yangtianjun/Desktop/LogisticsDemo/frontend/package-lock.json
+
+▲ Next.js 16.1.6 (Turbopack)
+- Local:         http://localhost:3000
+- Network:       http://192.168.1.15:3000
+
+✓ Starting...
+✓ Ready in 1287ms
+ GET / 200 in 960ms (compile: 647ms, render: 313ms)
+(node:5991) [DEP0060] DeprecationWarning: The `util._extend` API is deprecated. Please use Object.assign() instead.
+(Use `node --trace-deprecation ...` to show where the warning was created)
+ GET / 200 in 56ms (compile: 6ms, render: 49ms)
+ GET / 200 in 164ms (compile: 62ms, render: 102ms)
+✓ Compiled in 88ms
+⚠ Found a change in next.config.ts. Restarting the server to apply the changes...
+⚠ Warning: Next.js inferred your workspace root, but it may not be correct.
+ We detected multiple lockfiles and selected the directory of /Users/yangtianjun/package-lock.json as the root directory.
+ To silence this warning, set `turbopack.root` in your Next.js config, or consider removing one of the lockfiles if it's not needed.
+   See https://nextjs.org/docs/app/api-reference/config/next-config-js/turbopack#root-directory for more information.
+ Detected additional lockfiles: 
+   * /Users/yangtianjun/Desktop/LogisticsDemo/frontend/package-lock.json
+
+▲ Next.js 16.1.6 (Turbopack)
+- Local:         http://localhost:3000
+- Network:       http://192.168.1.15:3000
+
+✓ Starting...
+✓ Ready in 1199ms
+ GET / 200 in 1243ms (compile: 901ms, render: 342ms)
+✓ Compiled in 46ms
+✓ Compiled in 22ms
+✓ Compiled in 98ms
+⚠ Fast Refresh had to perform a full reload due to a runtime error.
+✓ Compiled in 21ms
+⨯ TypeError: Cannot read properties of undefined (reading 'slice')
+    at <unknown> (components/dashboard/SensorChart.tsx:87:14)
+    at SensorChart (components/dashboard/SensorChart.tsx:85:28)
+  85 |     const history = useMemo(() => {
+  86 |         return batches
+> 87 |             .slice(0, 30)
+     |              ^
+  88 |             .reverse()
+  89 |             .map((batch: TelemetryBatch) => {
+  90 |                 const point: DataPoint = { {
+  digest: '3367343074'
+}
+ GET / 500 in 628ms (compile: 65ms, render: 563ms)
+⚠ Fast Refresh had to perform a full reload due to a runtime error.
+✓ Compiled in 20ms
+ GET / 200 in 253ms (compile: 52ms, render: 202ms)

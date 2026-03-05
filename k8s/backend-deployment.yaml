@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: backend
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: backend
+  template:
+    metadata:
+      labels:
+        app: backend
+    spec:
+      containers:
+        - name: backend
+          image: logistics-backend:latest
+          ports:
+            - containerPort: 8000
+          env:
+            - name: OPENAI_API_KEY
+              value: "sk-placeholder"
+            - name: OPENAI_BASE_URL
+              value: "https://api.openai.com/v1"
+            - name: OPENAI_MODEL_NAME
+              value: "gpt-4o-mini"
