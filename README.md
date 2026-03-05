@@ -54,7 +54,7 @@ graph LR
     E -->|JSON Command| S
 ```
 
-### � 目录结构解析
+### 📂 目录结构解析
 
 - **`/backend`**: 智能体核心逻辑
   - `app/core/agent_graph.py`: **大脑核心**。定义了 LangGraph 的状态流转（感知->检索->规划->校验）。
@@ -73,9 +73,22 @@ graph LR
 - **模拟器 (`sensor_simulator.py`)**: 系统内置了一个高保真的物理环境模拟器，能够生成温度、湿度、VOC（挥发性有机物）、盐雾浓度等多种传感器时序数据。
 - **风险量化**: Agent 首先对遥测数据进行清洗，计算 `Risk Score`（风险评分）。例如，当 `VOC > 1.0 mg/m³` 时，系统会自动标记为“高危场景”，并触发紧急模式。
 
-### 2. 记忆层：结构化 RAG 检索 (Retrieve)
-- **SOP 数字化**: 系统启动时，会自动扫描 `/docs` 目录下的 Markdown 手册，将其按“标题-段落”进行语义切片，并存入本地向量数据库。
-- **动态检索**: 当感知到“盐雾超标”时，Agent 不会凭空捏造对策，而是将异常状态转化为 Query，在知识库中检索相关的《防腐蚀维护规程》，提取 Top-3 条款作为上下文（Context）。
+### 2. 记忆层：工业级 RAG 检索引擎 (Retrieve)
+
+为了解决通用大模型“不懂厂规”和“幻觉”问题，我们构建了一套深度定制的 RAG（Retrieval-Augmented Generation）引擎，**这也是本项目的核心亮点之一**。
+
+*   **SOP 结构化切片 (Structure-Aware Chunking)**:
+    *   不同于简单的按字符数切片，我们实现了**按 Markdown 标题层级**切片。
+    *   例如，将 `## 3. 盐雾处理流程` 下的所有段落聚合为一个 Chunk，确保 LLM 检索时能获得完整的上下文，而不是支离破碎的句子。
+    *   系统启动时，会自动扫描 `/docs` 目录，重建向量索引。
+
+*   **离线隐私保护 (Offline & Private)**:
+    *   使用 `sentence-transformers` (all-MiniLM-L6-v2) 在本地生成 Embedding。
+    *   数据存储在本地 `ChromaDB`，**核心 SOP 资料无需上传云端**，完全满足工业数据出境/上云的合规要求。
+
+*   **动态查询生成 (Dynamic Query Generation)**:
+    *   当感知层发现异常（如 `VOC=1.5`），Agent 会将结构化数据转化为语义 Query（如 *"VOC浓度超标时的应急处理流程"*）。
+    *   系统检索出 Top-3 最相关的 SOP 条款，注入到 Prompt 的 Context 窗口中，强制 LLM "基于检索到的文档回答"。
 
 ### 3. 认知层：思维链规划 (Plan)
 - **Prompt Engineering**: 我们设计了包含 `Role`（角色）、`Task`（任务）、`Constraint`（约束）的结构化 Prompt。
