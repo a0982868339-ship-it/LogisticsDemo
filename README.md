@@ -21,7 +21,8 @@
 
 > **[点击查看 演示录屏]**
 >
-> `https://github.com/user-attachments/assets/7435bed7-f65a-49b2-9983-278f774982bd`
+>![Uploading 工业级具身智能（Embodied AI）决策系统demo演示.gif…]()
+
 
 ---
 
